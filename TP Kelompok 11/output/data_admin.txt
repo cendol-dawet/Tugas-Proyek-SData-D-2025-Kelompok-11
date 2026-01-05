@@ -1,9 +1,0 @@
-USERNAME             | PASSWORD             | NAMA                      | TOKO       | VERIFIED
-admin1               | 123                  | Admin Satu                | T001       | 1
-admin2               | 123                  | Admin Dua                 | T001       | 1
-admin3               | 123                  | Admin Tiga                | T002       | 1
-admin4               | 123                  | Admin Empat               | T002       | 1
-admin5               | 123                  | Admin Lima                | T003       | 1
-admin6               | 123                  | Admin Enam                | T004       | 1
-admin7               | 123                  | Admin Tujuh               | T005       | 1
-admin8               | 123                  | abyan                     | T005       | 1

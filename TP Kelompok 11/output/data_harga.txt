@@ -1,2 +1,0 @@
-ORGANIK         | NON-ORGANIK     | BIO-ORGANIK
-8000            | 10000           | 50000

@@ -1,3 +1,0 @@
-TOKO       | USERNAME             | NAMA NASABAH              | JENIS           | BERAT
-T001       | user1                | Budi Santoso              | bio             | 5
-T001       | user1                | Budi Santoso              | organik         | 4
