@@ -11,6 +11,7 @@ int main() {
     loadAdmin();
     loadNasabah();
     loadHarga();
+    loadRiwayat();
     loadAntrian();
 
     int menuUtama;
@@ -180,6 +181,7 @@ int main() {
     saveNasabah();
     saveHarga();
     saveAntrian();
+    saveRiwayat();
     cout << "Data tersimpan. Bye!\n";
 
     return 0;

@@ -548,6 +548,64 @@ void loadHarga() {
     file.close();
 }
 
+void saveRiwayat() {
+    ofstream file("data_riwayat.txt");
+    file << left << setw(15) << "NASABAH" << " | " 
+         << setw(15) << "TOKO" << " | " 
+         << setw(10) << "BERAT" << " | " 
+         << setw(15) << "NOMINAL" << " | " 
+         << "JENIS" << endl;
+
+    NodeStack* bottom = topStack;
+    if (bottom != NULL) {
+        while (bottom->next != NULL) {
+            bottom = bottom->next;
+        }
+    }
+    
+    NodeStack* curr = bottom;
+    while (curr != NULL) {
+        file << left << setw(15) << curr->data.idNasabah << " | " 
+             << setw(15) << curr->data.idToko << " | " 
+             << setw(10) << curr->data.berat << " | " 
+             << setw(15) << (long)curr->data.nominal << " | " 
+             << curr->data.jenisSampah << endl;
+        curr = curr->prev;
+    }
+    file.close();
+}
+
+void loadRiwayat() {
+    ifstream file("data_riwayat.txt");
+    if (!file.is_open()) return;
+    string line;
+    bool firstLine = true;
+    while (getline(file, line)) {
+        if (firstLine) { firstLine = false; continue; }
+        if (line.empty()) continue;
+
+        string idNsb, idTk, sBerat, sNom, jenis;
+        stringstream ss(line);
+        string segment;
+        
+        getline(ss, segment, '|'); idNsb = trim(segment);
+        getline(ss, segment, '|'); idTk = trim(segment);
+        getline(ss, segment, '|'); sBerat = trim(segment);
+        getline(ss, segment, '|'); sNom = trim(segment);
+        getline(ss, segment, '|'); jenis = trim(segment);
+
+        if (idNsb.empty()) continue;
+        
+        double berat = 0;
+        double nominal = 0;
+        try { berat = stod(sBerat); } catch(...) {}
+        try { nominal = stod(sNom); } catch(...) {}
+
+        pushStack(idNsb, idTk, berat, nominal, jenis);
+    }
+    file.close();
+}
+
 void saveNasabahHelper(NodeNasabah* node, ofstream& file) {
     if (node == NULL) return;
     
@@ -1172,6 +1230,7 @@ void menuAdmin(string idTokoAdmin) {
                     
                     // PUSH KE STACK
                     pushStack(n->idNasabah, idTokoAdmin, beratReal, total, n->jenisSampah);
+                    saveRiwayat(); // Simpan riwayat
                     
                     cout << "Saldo bertambah: Rp " << (long)total << endl;
                     saveNasabah();
@@ -1231,6 +1290,7 @@ void menuAdmin(string idTokoAdmin) {
             }
         }
         else if (pil == 6) {
+            saveRiwayat(); // Update file setelah undo
             popUndo();
         }
     } while (pil != 7);
