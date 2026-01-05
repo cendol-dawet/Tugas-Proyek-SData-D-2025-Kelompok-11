@@ -1,0 +1,21 @@
+NIK        | USERNAME             | NAMA                      | PASSWORD             | SALDO
+7001       | user1                | Budi Santoso              | 123                  | 94000
+7002       | user2                | Siti Aminah               | 123                  | 25000
+7003       | user3                | Ahmad Hidayat             | 123                  | 10000
+7004       | user4                | Dewi Lestari              | 123                  | 75000
+7005       | user5                | Eko Prasetyo              | 123                  | 0
+7006       | user6                | Fajar Nugroho             | 123                  | 15000
+7007       | user7                | Gita Pertiwi              | 123                  | 30000
+7008       | user8                | Hadi Sucipto              | 123                  | 45000
+7009       | user9                | Indah Sari                | 123                  | 60000
+7010       | user10               | Joko Widodo               | 123                  | 20000
+7011       | user11               | Kartika Putri             | 123                  | 55000
+7012       | user12               | Lukman Hakim              | 123                  | 12000
+7013       | user13               | Maya Anggraini            | 123                  | 80000
+7014       | user14               | Nanda Saputra             | 123                  | 90000
+7015       | user15               | Oki Setiana               | 123                  | 35000
+7016       | user16               | Putra Pratama             | 123                  | 40000
+7017       | user17               | Qori Handayani            | 123                  | 22000
+7018       | user18               | Rina Wati                 | 123                  | 18000
+7019       | user19               | Surya Kencana             | 123                  | 65000
+7020       | user20               | Tono Sudirjo              | 123                  | 70000
