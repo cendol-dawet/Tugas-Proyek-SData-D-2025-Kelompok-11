@@ -398,7 +398,7 @@ void popUndo() {
 // ==========================================
 
 void saveAdmin() {
-    ofstream file("data_admin.txt");
+    ofstream file("output/data_admin.txt");
     // Header Tabel
     file << left << setw(20) << "USERNAME" << " | " 
          << setw(20) << "PASSWORD" << " | " 
@@ -422,7 +422,7 @@ void saveAdmin() {
 }
 
 void loadAdmin() {
-    ifstream file("data_admin.txt");
+    ifstream file("output/data_admin.txt");
     if (!file.is_open()) return;
     string line;
     bool firstLine = true;
@@ -460,7 +460,7 @@ void loadAdmin() {
 }
 
 void saveToko() {
-    ofstream file("data_toko.txt");
+    ofstream file("output/data_toko.txt");
     file << left << setw(10) << "ID" << " | " 
          << setw(25) << "NAMA TOKO" << " | " 
          << "TOTAL SAMPAH" << endl;
@@ -476,7 +476,7 @@ void saveToko() {
 }
 
 void loadToko() {
-    ifstream file("data_toko.txt");
+    ifstream file("output/data_toko.txt");
     if (!file.is_open()) return;
     string line;
     bool firstLine = true;
@@ -510,7 +510,7 @@ void loadToko() {
 
 // --- HARGA (Global) ---
 void saveHarga() {
-    ofstream file("data_harga.txt");
+    ofstream file("output/data_harga.txt");
     file << left << setw(15) << "ORGANIK" << " | " 
          << setw(15) << "NON-ORGANIK" << " | " 
          << "BIO-ORGANIK" << endl;
@@ -522,7 +522,7 @@ void saveHarga() {
 }
 
 void loadHarga() {
-    ifstream file("data_harga.txt");
+    ifstream file("output/data_harga.txt");
     if (!file.is_open()) return;
     string line;
     bool firstLine = true;
@@ -549,7 +549,7 @@ void loadHarga() {
 }
 
 void saveRiwayat() {
-    ofstream file("data_riwayat.txt");
+    ofstream file("output/data_riwayat.txt");
     file << left << setw(15) << "NASABAH" << " | " 
          << setw(15) << "TOKO" << " | " 
          << setw(10) << "BERAT" << " | " 
@@ -576,7 +576,7 @@ void saveRiwayat() {
 }
 
 void loadRiwayat() {
-    ifstream file("data_riwayat.txt");
+    ifstream file("output/data_riwayat.txt");
     if (!file.is_open()) return;
     string line;
     bool firstLine = true;
@@ -620,7 +620,7 @@ void saveNasabahHelper(NodeNasabah* node, ofstream& file) {
 }
 
 void saveNasabah() {
-    ofstream file("data_nasabah.txt");
+    ofstream file("output/data_nasabah.txt");
     file << left << setw(10) << "NIK" << " | " 
          << setw(20) << "USERNAME" << " | " 
          << setw(25) << "NAMA" << " | " 
@@ -631,7 +631,7 @@ void saveNasabah() {
 }
 
 void loadNasabah() {
-    ifstream file("data_nasabah.txt");
+    ifstream file("output/data_nasabah.txt");
     if (!file.is_open()) return;
     string line;
     bool firstLine = true;
@@ -674,7 +674,7 @@ void loadNasabah() {
 
 
 void saveAntrian() {
-    ofstream file("data_antrian.txt");
+    ofstream file("output/data_antrian.txt");
     file << left << setw(10) << "TOKO" << " | " 
          << setw(20) << "USERNAME" << " | " 
          << setw(25) << "NAMA NASABAH" << " | " 
@@ -699,7 +699,7 @@ void saveAntrian() {
 }
 
 void loadAntrian() {
-    ifstream file("data_antrian.txt");
+    ifstream file("output/data_antrian.txt");
     if (!file.is_open()) return;
     string line;
     bool firstLine = true;
@@ -1184,10 +1184,10 @@ void menuOwner() {
             deleteToko(id);
         }
         else if (pil == 9) {
-            compressDatabase("data_nasabah.txt", "backup_nasabah.bin");
+            compressDatabase("output/data_nasabah.txt", "output/backup_nasabah.bin");
         }
         else if (pil == 10) {
-            decompressDatabase("backup_nasabah.bin", "data_nasabah.txt");
+            decompressDatabase("output/backup_nasabah.bin", "output/data_nasabah.txt");
             // Reload data ke memori agar update
             deleteTree(rootNasabah);
             rootNasabah = NULL;

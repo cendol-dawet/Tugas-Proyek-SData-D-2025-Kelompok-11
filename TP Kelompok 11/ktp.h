@@ -172,7 +172,7 @@ bool deleteKTPByNIK(long long int nik) {
 // NIK#Nama#Alamat#Hari#Bulan#Tahun#JK#Agama#Status#Pekerjaan#Kewarganegaraan#Password#StatusAkun
 
 void saveKTP() {
-    ofstream file("data_ktp.txt");
+    ofstream file("output/data_ktp.txt");
     if (!file.is_open()) {
         cerr << "GAGAL: Tidak bisa membuka data_ktp.txt untuk menulis.\n";
         return;
@@ -200,7 +200,7 @@ void saveKTP() {
 }
 
 void loadKTP() {
-    ifstream file("data_ktp.txt");
+    ifstream file("output/data_ktp.txt");
     if (!file.is_open()) {
         // File tidak ada = normal (program pertama kali)
         return;
