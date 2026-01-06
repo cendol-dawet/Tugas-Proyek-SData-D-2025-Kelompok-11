@@ -1,0 +1,6 @@
+ID         | NAMA TOKO                 | TOTAL SAMPAH
+T001       | Toko Berkah               | 0
+T002       | Toko Sejahtera            | 0
+T003       | Toko Maju                 | 0
+T004       | Toko Jaya                 | 0
+T005       | Toko Abadi                | 0

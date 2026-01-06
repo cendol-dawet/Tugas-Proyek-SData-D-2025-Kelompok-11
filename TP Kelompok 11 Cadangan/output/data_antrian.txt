@@ -1,0 +1,2 @@
+TOKO       | USERNAME             | NAMA NASABAH              | JENIS           | BERAT
+T001       | user1                | Budi Santoso              | Organik         | 12
